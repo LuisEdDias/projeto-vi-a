@@ -48,7 +48,7 @@ public class DoadorCreateDTO{
                 return docIdentificacao;
         }
 
-        public void setDoc_identificacao() {
+        public void setDocIdentificacao() {
                 this.docIdentificacao = docIdentificacao;
         }
 }

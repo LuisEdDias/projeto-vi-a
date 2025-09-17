@@ -3,6 +3,7 @@ package lat.luisdias.doacao_api.dtos;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;
 
+// DTO usado para receber os dados de atualização do Doador com validações iniciais
 public record DoadorUpdateDTO(
         @Pattern(
                 regexp = "^[a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]+(\\s?[a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]+)*$",
