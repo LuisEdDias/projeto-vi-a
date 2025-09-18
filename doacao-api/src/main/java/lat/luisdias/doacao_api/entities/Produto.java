@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lat.luisdias.doacao_api.dtos.ProdutoCreateDTO;
 import lat.luisdias.doacao_api.dtos.ProdutoUpdateDTO;
 
+// Classe que representa um produto na aplicação
 @Entity(name = "produto")
 public class Produto {
     @Id
@@ -16,14 +17,17 @@ public class Produto {
     @Column(nullable = false)
     private UnidadeControle unidadeControle;
 
+    // Construtor padrão exigido pela JPA
     protected Produto() {}
 
+    // Construtor que recebe os dados
     public Produto(ProdutoCreateDTO produtoCreateDTO) {
         this.nome = produtoCreateDTO.nome();
         this.categoria = produtoCreateDTO.categoria();
         this.unidadeControle = produtoCreateDTO.unidadeControle();
     }
 
+    // Méetodo para atualização dos dados de um produto
     public void update(ProdutoUpdateDTO produtoUpdateDTO) {
         if (produtoUpdateDTO.nome() != null) {
             this.nome = produtoUpdateDTO.nome();

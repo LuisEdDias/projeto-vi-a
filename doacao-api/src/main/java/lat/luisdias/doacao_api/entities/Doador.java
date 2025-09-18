@@ -27,6 +27,7 @@ public class Doador {
         this.docIdentificacao = doadorCreateDTO.getDocIdentificacao();
     }
 
+    // Método para atualizar os dados de um doador
     public void update(DoadorUpdateDTO doadorUpdateDTO) {
         if (doadorUpdateDTO.nome() != null){
             this.nome = doadorUpdateDTO.nome();
