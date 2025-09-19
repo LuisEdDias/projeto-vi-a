@@ -13,10 +13,12 @@ public class DoacaoProduto {
     @Column(precision = 10, scale = 2, nullable = false)
     private BigDecimal quantidade;
 
+    // Relacionamento uniderecional com a entidade Produto
     @ManyToOne
     @JoinColumn(name = "produto_id", nullable = false)
     private Produto produto;
 
+    // Relacionamento bidirecional com a entidade Doacao
     @ManyToOne
     @JoinColumn(name = "doacao_id", nullable = false)
     private Doacao doacao;

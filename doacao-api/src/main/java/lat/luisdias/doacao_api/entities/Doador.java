@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lat.luisdias.doacao_api.dtos.DoadorCreateDTO;
 import lat.luisdias.doacao_api.dtos.DoadorUpdateDTO;
 
+import java.util.ArrayList;
+import java.util.List;
+
 // Classe que representa um doador no sistema
 @Entity(name = "doador")
 public class Doador {
@@ -17,6 +20,9 @@ public class Doador {
     @Column(unique = true, nullable = false)
     private String docIdentificacao;
 
+    @OneToMany(mappedBy = "doador", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Doacao> doacoes;
+
     // Construtor padrão exigido pela JPA
     protected Doador() {}
 
@@ -25,6 +31,7 @@ public class Doador {
         this.nome = doadorCreateDTO.getNome();
         this.email = doadorCreateDTO.getEmail();
         this.docIdentificacao = doadorCreateDTO.getDocIdentificacao();
+        this.doacoes = new ArrayList<>();
     }
 
     // Método para atualizar os dados de um doador
@@ -52,5 +59,9 @@ public class Doador {
 
     public String getDocIdentificacao() {
         return docIdentificacao;
+    }
+
+    public List<Doacao> getDoacoes() {
+        return doacoes;
     }
 }
