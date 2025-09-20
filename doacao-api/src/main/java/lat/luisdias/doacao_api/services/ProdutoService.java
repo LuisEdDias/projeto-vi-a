@@ -10,7 +10,6 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 // Classe responsável pelas regras de negócio de Produto
 @Service
@@ -37,9 +36,7 @@ public class ProdutoService {
 
     // Retorna um produto caso o ID informado exista
     public Produto getByIdOrThrow(Long id) {
-        Optional<Produto> produto = produtoRepository.findById(id);
-
-        return produto.orElseThrow(
+        return produtoRepository.findById(id).orElseThrow(
                 () -> new EntityNotFoundException("Produto não encontrado")
         );
     }
@@ -59,6 +56,7 @@ public class ProdutoService {
     // Deleta um produto caso ele exista
     public void delete(Long id) {
         Produto produto = getByIdOrThrow(id);
+        // Verifica se o produto está associado à doações
         if (doacaoProdutoRepository.existsByProduto(produto)) {
             throw new DataIntegrityViolationException(
                     "Esse produto não pode ser deletado pois está associado a uma ou mais doações"
