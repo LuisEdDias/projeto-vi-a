@@ -20,6 +20,7 @@ public class Doador {
     @Column(unique = true, nullable = false)
     private String docIdentificacao;
 
+    // Relacionamento bidirecional com a entidade Doacao
     @OneToMany(mappedBy = "doador", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Doacao> doacoes;
 
