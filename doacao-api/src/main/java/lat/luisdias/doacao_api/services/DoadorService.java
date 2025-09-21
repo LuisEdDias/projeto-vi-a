@@ -34,6 +34,13 @@ public class DoadorService {
         );
     }
 
+    // Retorna um doador e sua lista de doações
+    public Doador getByIdOrThrowWithDoacoes(Long id){
+        return doadorRepository.findByIdWithDoacoes(id).orElseThrow(
+                () -> new EntityNotFoundException("Doador não encontrado")
+        );
+    }
+
     // Cria um novo doador se os dados forem válidos
     @Transactional
     public Doador create(DoadorCreateDTO doadorCreateDTO){
