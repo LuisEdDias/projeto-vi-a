@@ -21,7 +21,7 @@ public class Doacao {
     private Doador doador;
 
     // Relacionamento bidirecional com a entidade DoacaoProduto
-    @OneToMany(mappedBy = "doacao", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    @OneToMany(mappedBy = "doacao", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<DoacaoProduto> itens;
 
     // Construtor padrão exigido pela JPA

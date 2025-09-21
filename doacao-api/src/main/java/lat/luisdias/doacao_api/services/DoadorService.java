@@ -7,6 +7,7 @@ import lat.luisdias.doacao_api.entities.Doador;
 import lat.luisdias.doacao_api.repositories.DoadorRepository;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -34,6 +35,7 @@ public class DoadorService {
     }
 
     // Cria um novo doador se os dados forem válidos
+    @Transactional
     public Doador create(DoadorCreateDTO doadorCreateDTO){
         if (doadorRepository.existsByDocIdentificacao(doadorCreateDTO.getDocIdentificacao())) {
             throw new DataIntegrityViolationException(
@@ -44,6 +46,7 @@ public class DoadorService {
     }
 
     // Atualiza os dados de um doador caso exista
+    @Transactional
     public Doador update(Long id, DoadorUpdateDTO doadorUpdateDTO) {
         Doador doador = getByIdOrThrow(id);
         doador.update(doadorUpdateDTO);
@@ -51,6 +54,7 @@ public class DoadorService {
     }
 
     // Deleta um doador do banco de dados caso exista
+    @Transactional
     public void delete(Long id){
         Doador doador = getByIdOrThrow(id);
         // Verifica se existem doações associadas ao doador

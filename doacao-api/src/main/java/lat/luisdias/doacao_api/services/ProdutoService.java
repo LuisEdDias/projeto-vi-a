@@ -8,6 +8,7 @@ import lat.luisdias.doacao_api.repositories.DoacaoProdutoRepository;
 import lat.luisdias.doacao_api.repositories.ProdutoRepository;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -42,11 +43,13 @@ public class ProdutoService {
     }
 
     // Cria um novo produto no banco de dados
+    @Transactional
     public Produto create(ProdutoCreateDTO produtoCreateDTO) {
         return produtoRepository.save(new Produto(produtoCreateDTO));
     }
 
     // Atualiza os dados de um produto caso ele exista
+    @Transactional
     public Produto update(Long id, ProdutoUpdateDTO produtoUpdateDTO) {
         Produto produto = getByIdOrThrow(id);
         produto.update(produtoUpdateDTO);
@@ -54,6 +57,7 @@ public class ProdutoService {
     }
 
     // Deleta um produto caso ele exista
+    @Transactional
     public void delete(Long id) {
         Produto produto = getByIdOrThrow(id);
         // Verifica se o produto está associado à doações

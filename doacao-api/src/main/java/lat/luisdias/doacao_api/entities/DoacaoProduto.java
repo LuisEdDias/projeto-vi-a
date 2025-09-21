@@ -33,6 +33,11 @@ public class DoacaoProduto {
         this.doacao = doacao;
     }
 
+    // Altera a quantidade do produto
+    public void addQuantidade(BigDecimal valor) {
+        this.quantidade = this.quantidade.add(valor);
+    }
+
     public Long getId() {
         return id;
     }
