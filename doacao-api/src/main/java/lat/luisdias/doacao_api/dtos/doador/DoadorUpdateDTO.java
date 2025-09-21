@@ -1,4 +1,4 @@
-package lat.luisdias.doacao_api.dtos;
+package lat.luisdias.doacao_api.dtos.doador;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;

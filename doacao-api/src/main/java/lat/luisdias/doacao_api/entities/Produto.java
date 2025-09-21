@@ -1,8 +1,8 @@
 package lat.luisdias.doacao_api.entities;
 
 import jakarta.persistence.*;
-import lat.luisdias.doacao_api.dtos.ProdutoCreateDTO;
-import lat.luisdias.doacao_api.dtos.ProdutoUpdateDTO;
+import lat.luisdias.doacao_api.dtos.produto.ProdutoCreateDTO;
+import lat.luisdias.doacao_api.dtos.produto.ProdutoUpdateDTO;
 
 // Classe que representa um produto na aplicação
 @Entity(name = "produto")

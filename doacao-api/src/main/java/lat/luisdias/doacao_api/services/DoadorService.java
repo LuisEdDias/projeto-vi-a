@@ -1,8 +1,8 @@
 package lat.luisdias.doacao_api.services;
 
 import jakarta.persistence.EntityNotFoundException;
-import lat.luisdias.doacao_api.dtos.DoadorCreateDTO;
-import lat.luisdias.doacao_api.dtos.DoadorUpdateDTO;
+import lat.luisdias.doacao_api.dtos.doador.DoadorCreateDTO;
+import lat.luisdias.doacao_api.dtos.doador.DoadorUpdateDTO;
 import lat.luisdias.doacao_api.entities.Doador;
 import lat.luisdias.doacao_api.repositories.DoadorRepository;
 import org.springframework.dao.DataIntegrityViolationException;

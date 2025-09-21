@@ -1,8 +1,8 @@
 package lat.luisdias.doacao_api.services;
 
 import jakarta.persistence.EntityNotFoundException;
-import lat.luisdias.doacao_api.dtos.DoacaoCreateDTO;
-import lat.luisdias.doacao_api.dtos.ProdutoQuantidadeDTO;
+import lat.luisdias.doacao_api.dtos.doacao.DoacaoCreateDTO;
+import lat.luisdias.doacao_api.dtos.doacao.ProdutoQuantidadeDTO;
 import lat.luisdias.doacao_api.entities.Doacao;
 import lat.luisdias.doacao_api.entities.DoacaoProduto;
 import lat.luisdias.doacao_api.entities.Doador;

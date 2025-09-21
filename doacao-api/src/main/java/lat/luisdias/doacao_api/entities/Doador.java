@@ -1,8 +1,8 @@
 package lat.luisdias.doacao_api.entities;
 
 import jakarta.persistence.*;
-import lat.luisdias.doacao_api.dtos.DoadorCreateDTO;
-import lat.luisdias.doacao_api.dtos.DoadorUpdateDTO;
+import lat.luisdias.doacao_api.dtos.doador.DoadorCreateDTO;
+import lat.luisdias.doacao_api.dtos.doador.DoadorUpdateDTO;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,9 +1,9 @@
 package lat.luisdias.doacao_api.controllers;
 
 import jakarta.validation.Valid;
-import lat.luisdias.doacao_api.dtos.ProdutoCreateDTO;
-import lat.luisdias.doacao_api.dtos.ProdutoGetDTO;
-import lat.luisdias.doacao_api.dtos.ProdutoUpdateDTO;
+import lat.luisdias.doacao_api.dtos.produto.ProdutoCreateDTO;
+import lat.luisdias.doacao_api.dtos.produto.ProdutoGetDTO;
+import lat.luisdias.doacao_api.dtos.produto.ProdutoUpdateDTO;
 import lat.luisdias.doacao_api.services.ProdutoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

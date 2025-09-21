@@ -1,4 +1,4 @@
-package lat.luisdias.doacao_api.dtos;
+package lat.luisdias.doacao_api.dtos.doacao;
 
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Digits;

@@ -1,4 +1,4 @@
-package lat.luisdias.doacao_api.dtos;
+package lat.luisdias.doacao_api.dtos.produto;
 
 import lat.luisdias.doacao_api.entities.Produto;
 
