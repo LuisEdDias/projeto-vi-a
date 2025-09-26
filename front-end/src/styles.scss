@@ -1,2 +1,13 @@
-/* Importing Bootstrap SCSS file. */
 @use 'bootstrap/scss/bootstrap';
+
+:host {
+    display: block;
+    height: 100%;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}

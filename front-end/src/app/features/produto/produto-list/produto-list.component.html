@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="card shadow-sm">
+        <h5 class="card-header text-white">Caixas</h5>
+        <div class="card-body p-0">
+            <div class="table-responsive" *ngIf="produtos().length > 0">
+                <table class="table table-striped table-hover table-sm align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Categoria</th>
+                            <th>Unidade de Controle</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let produto of produtos()">
+                            <td>{{ produto.id }}</td>
+                            <td >{{ produto.nome }}</td>
+                            <td>{{ produto.categoria }}</td>
+                            <td>{{ produto.unidadeControle }}</td>
+                            <td>
+                                <a class="btn btn-sm btn-outline-primary me-1">
+                                    Editar
+                                </a>
+                                <a class="btn btn-sm btn-outline-danger">
+                                    Excluir
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div *ngIf="produtos().length === 0" class="text-center text-muted py-3">
+                Nenhum registro encontrado.
+            </div>
+        </div>
+    </div>
+</div>
