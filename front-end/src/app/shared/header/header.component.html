@@ -1,0 +1,44 @@
+<header class="w-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container-fluid h-100 navbar-text">
+            <!-- Logo -->
+            <a class="navbar-brand p-0 m-0" [routerLink]="['/']">
+                <img src="logo.png" alt="Logo" class="app-logo d-inline-block align-text-top">
+            </a>
+
+            <!-- Links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="produtoDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Produtos
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="produtoDropdown">
+                        <li><a class="dropdown-item" [routerLink]="['/produto']">Lista de Produtos</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/produto/cadastro']">Cadastrar Produto</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="doadorDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Doadores
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="doadorDropdown">
+                        <li><a class="dropdown-item" [routerLink]="['/doador']">Lista de Doadores</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/doador/cadastro']">Cadastrar Doador</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="doacaoDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Doações
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="doacaoDropdown">
+                        <li><a class="dropdown-item" [routerLink]="['/doacao']">Doações Realizadas</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/doacao/cadastro']">Nova Doação</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
