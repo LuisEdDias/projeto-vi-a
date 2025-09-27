@@ -1,0 +1,28 @@
+@use '../shared-styles.scss';
+
+.modal-header {
+  background-color: #004080;
+}
+
+.btn {
+  border-radius: 0.5rem;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1050;
+
+  &.fade {
+    opacity: 0;
+    transition: opacity 0.15s linear;
+  }
+
+  &.show {
+    opacity: 1;
+  }
+}

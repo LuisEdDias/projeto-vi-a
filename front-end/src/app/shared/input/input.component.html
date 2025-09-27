@@ -1,0 +1,9 @@
+<label *ngIf="label" class="form-label fw-medium text-muted">{{ label }}</label>
+<div class="input-group bg-white">
+    <input #inputRef [type]="type" class="form-control input-custom" [placeholder]="placeholder" [autofocus]="autofocus"
+        [ngClass]="{ 'is-invalid': submitted && errorMessage }" [value]="value"
+        (input)="onInputChange($event)">
+</div>
+<div *ngIf="submitted && errorMessage" class="invalid-feedback d-block">
+    {{ errorMessage }}
+</div>

@@ -1,0 +1,21 @@
+<div class="select-wrapper">
+    <label *ngIf="label" class="form-label fw-medium text-muted">{{ label }}</label>
+
+    <input type="text" (focus)="toggleDropdown()" (ngModelChange)="filterOptions($event)"
+        [placeholder]="placeholder" class="form-control select-custom" (blur)="onSearchBlur()"
+        [(ngModel)]="searchText" [disabled]="disabled" />
+
+    <div class="dropdown" *ngIf="showDropdown">
+        <div class="dropdown-option" *ngFor="let opt of filteredOptions" (click)="selectOption(opt)">
+            {{ opt.label }}
+        </div>
+
+        <div *ngIf="filteredOptions.length === 0" class="no-results">
+            Nenhuma opção encontrada
+        </div>
+    </div>
+
+    <div *ngIf="submitted && errorMessage" class="invalid-feedback d-block">
+        {{ errorMessage }}
+    </div>
+</div>

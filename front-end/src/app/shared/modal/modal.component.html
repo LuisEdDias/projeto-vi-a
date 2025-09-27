@@ -1,0 +1,26 @@
+<div class="modal-backdrop" *ngIf="isOpen" (click)="closeOnBackdrop && close()"
+    [ngClass]="{ 'fade': fade, 'show': isOpen }"></div>
+
+<div class="modal" tabindex="-1" role="dialog" [ngClass]="{
+    'fade': fade,
+    'show d-block': isOpen
+  }" [ngStyle]="{ display: isOpen ? 'block' : 'none' }">
+    <div class="modal-dialog" [ngClass]="[modalSize, scrollable]" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-white">
+                <h5 class="modal-title">{{ title }}</h5>
+                <button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="close()"></button>
+            </div>
+            <div class="modal-body">
+                <ng-content></ng-content>
+            </div>
+            <div class="modal-footer" *ngIf="showFooter">
+                <ng-content select="[modal-footer]"></ng-content>
+                <ng-container *ngIf="!customFooter">
+                    <button type="button" class="btn app-btn-gray" (click)="close()">Cancelar</button>
+                    <button type="button" class="btn app-btn-blue" (click)="confirm()">Confirmar</button>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

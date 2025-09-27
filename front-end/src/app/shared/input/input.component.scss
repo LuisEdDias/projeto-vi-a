@@ -1,0 +1,15 @@
+.input-group {
+  border-radius: 0.5rem;
+  border: 1px solid #6c757d;
+}
+
+.input-custom {
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  padding: 0.55rem 0.75rem;
+}
+
+.input-custom:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
