@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="card shadow-sm">
+        <h5 class="card-header text-white">Doadores</h5>
+        <div class="card-body p-0">
+            <div class="table-responsive" *ngIf="doadores().length > 0">
+                <table class="table table-striped table-hover table-sm align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Documento de Identificação</th>
+                            <th>Email</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let doador of doadores()">
+                            <td>{{ doador.id }}</td>
+                            <td>{{ doador.nome }}</td>
+                            <td>{{ doador.docIdentificacao }}</td>
+                            <td>{{ doador.email }}</td>
+                            <td>
+                                <a class="btn btn-sm btn-outline-primary me-1"
+                                    (click)="openUpdateDoadorModal(doador.id)">
+                                    Editar
+                                </a>
+                                <a class="btn btn-sm btn-outline-danger me-1" (click)="removeDoador(doador.id)">
+                                    Excluir
+                                </a>
+                                <a class="btn btn-sm btn-outline-success" [routerLink]="[`/${doador.id}/doacoes`]">
+                                    Doações
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div *ngIf="doadores().length === 0" class="text-center text-muted py-3">
+                Nenhum registro encontrado.
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-modal [title]="'Atualizar Dados do Doador'" [isOpen]="showUpdateDoadorModal" [fade]="true" [customFooter]="true"
+    (onClose)="closeUpdateDoadorModal()">
+    <form [formGroup]="updateDoadorForm" class="row g-3" (ngSubmit)="updateDoador()">
+        <app-input formControlName="nome" [label]="'Nome'" [errorMessage]="getErrorMessage('nome')"
+            [submitted]="submitted"></app-input>
+        <app-input formControlName="email" [label]="'Email'" [errorMessage]="getErrorMessage('email')"
+            [submitted]="submitted"></app-input>
+        <div modal-footer class="d-flex justify-content-end gap-2">
+            <button type="submit" class="btn app-btn-blue">Salvar</button>
+            <button type="button" class="btn app-btn-red" (click)="closeUpdateDoadorModal()">
+                Cancelar
+            </button>
+        </div>
+    </form>
+</app-modal>

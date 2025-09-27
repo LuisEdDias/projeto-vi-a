@@ -10,3 +10,8 @@ export interface DoadorCreateDTO {
   email: string;
   docIdentificacao: string;
 }
+
+export interface DoadorUpdateDTO {
+  nome: string;
+  email: string;
+}
