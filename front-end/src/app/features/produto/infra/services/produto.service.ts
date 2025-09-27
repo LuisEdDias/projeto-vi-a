@@ -18,8 +18,11 @@ export class ProdutoService {
     return this.baseService.get<ProdutoResponseDTO[]>(this.endpoint);
   }
 
+  create(data: ProdutoCreateDTO): Observable<ProdutoResponseDTO> {
+    return this.baseService.post<ProdutoResponseDTO>(this.endpoint, data);
+  }
+
   update(id: number, data: ProdutoCreateDTO): Observable<ProdutoResponseDTO> {
-    console.log('Atualizando produto ID:', id, 'com dados:', data);
     return this.baseService.put<ProdutoResponseDTO>(
       `${this.endpoint}/${id}`,
       data

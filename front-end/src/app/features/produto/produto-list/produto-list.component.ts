@@ -89,7 +89,6 @@ export class ProdutoListComponent {
   updateProduto(): void {
     this.submitted = true;
     if (this.updateProdutoForm.invalid) {
-      this.submitted = false;
       return;
     }
 

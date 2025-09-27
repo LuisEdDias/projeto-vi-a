@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { ProdutoListComponent } from './features/produto/produto-list/produto-list.component';
+import { ProdutoCreateComponent } from './features/produto/produto-create/produto-create.component';
 
 export const routes: Routes = [
   {
@@ -9,6 +10,10 @@ export const routes: Routes = [
         path: '',
         component: ProdutoListComponent,
       },
+      {
+        path: 'cadastro',
+        component: ProdutoCreateComponent
+      }
     ],
   },
 ];
