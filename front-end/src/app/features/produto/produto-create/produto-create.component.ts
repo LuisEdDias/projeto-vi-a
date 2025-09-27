@@ -53,7 +53,7 @@ export class ProdutoCreateComponent {
         this.submitted = false;
       },
       error: (err) => {
-        alert('Erro ao criar produto. Tente novamente.');
+        alert(err['error'] || 'Erro ao criar produto. Tente novamente.');
         console.error(err);
         this.submitted = false;
       }

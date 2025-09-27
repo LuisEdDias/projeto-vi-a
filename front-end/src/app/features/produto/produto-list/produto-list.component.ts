@@ -58,8 +58,9 @@ export class ProdutoListComponent {
       next: (data) => {
         this.produtos.set(data);
       },
-      error: () => {
-        console.error('Erro ao carregar produtos');
+      error: (err) => {
+        alert(err['error'] || 'Erro ao carregar produtos');
+        console.error(err);
       }
     });
   }
@@ -100,12 +101,14 @@ export class ProdutoListComponent {
 
     this.produtoService.update(this.produtoUpdateId, this.updateProdutoForm.value).subscribe({
       next: () => {
+        alert('Produto atualizado com sucesso');
         this.loadProdutos();
         this.showUpdateProdutoModal = false;
         this.submitted = false;
       },
-      error: () => {
-        console.error('Erro ao atualizar produto');
+      error: (err) => {
+        alert(err['error'] || 'Erro ao atualizar produto');
+        console.error(err);
         this.submitted = false;
       }
     });
@@ -126,8 +129,9 @@ export class ProdutoListComponent {
       next: () => {
         this.loadProdutos();
       },
-      error: () => {
-        console.error('Erro ao remover produto');
+      error: (err) => {
+        alert(err['error'] || 'Erro ao remover produto');
+        console.error(err);
       }
     });
   }
