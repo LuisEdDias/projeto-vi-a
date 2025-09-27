@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { ProdutoListComponent } from './features/produto/produto-list/produto-list.component';
 import { ProdutoCreateComponent } from './features/produto/produto-create/produto-create.component';
+import { DoadorCreateComponent } from './features/doador/doador-create/doador-create.component';
 
 export const routes: Routes = [
   {
@@ -13,6 +14,15 @@ export const routes: Routes = [
       {
         path: 'cadastro',
         component: ProdutoCreateComponent
+      }
+    ],
+  },
+  {
+    path: 'doador',
+    children: [
+      {
+        path: 'cadastro',
+        component: DoadorCreateComponent
       }
     ],
   },

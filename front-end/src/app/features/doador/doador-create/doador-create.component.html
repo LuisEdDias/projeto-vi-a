@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="card shadow-sm w-75 mx-auto">
+        <h5 class="card-header text-white">Cadastrar Doador</h5>
+        <div class="card-body p-0">
+            <div class="p-3">
+                <form [formGroup]="createDoadorForm" class="row g-3" (ngSubmit)="createDoador()">
+                    <div class="d-flex gap-3">
+                        <div class="form-check p-0 col-3">
+                            <input type="radio" class="btn-check" name="options-outlined" id="cpf"
+                                autocomplete="off" [checked]="pessoaFisica" (change)="toggleForm(true)">
+                            <label class="btn btn-outline-primary w-100 fw-semibold" for="cpf">
+                                Pessoa Física
+                            </label>
+                        </div>
+                        <div class="form-check p-0 col-3">
+                            <input type="radio" class="btn-check" name="options-outlined" id="cnpj"
+                                autocomplete="off" [checked]="!pessoaFisica" (change)="toggleForm(false)">
+                            <label class="btn btn btn-outline-primary w-100 fw-semibold" for="cnpj">
+                                Pessoa Jurídica
+                            </label>
+                        </div>
+                    </div>
+                    <app-input formControlName="nome" [label]="'Nome'" [errorMessage]="getErrorMessage('nome')"
+                        [submitted]="submitted"></app-input>
+                    <app-input formControlName="email" [label]="'Email'" [errorMessage]="getErrorMessage('email')"
+                        [submitted]="submitted"></app-input>
+
+                    <app-input formControlName="docIdentificacao" [label]="pessoaFisica ? 'CPF' : 'CNPJ'"
+                        [errorMessage]="getErrorMessage('docIdentificacao')" [submitted]="submitted"
+                        [mask]="pessoaFisica ? '000.000.000-00' : '00.000.000/0000-00'"></app-input>
+                    <div class="row justify-content-end gap-2 p-0 mt-2">
+                        <button class="btn app-btn-gray col-3" type="button" (click)="resetForm()">
+                            Limpar
+                        </button>
+                        <button class="btn app-btn-blue col-3" type="submit">
+                            Cadastrar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
