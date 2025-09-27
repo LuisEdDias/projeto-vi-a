@@ -7,10 +7,15 @@ import {
   forwardRef,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
   selector: 'app-input',
-  imports: [NgClass, NgIf],
+  imports: [
+    NgClass, 
+    NgIf,
+    NgxMaskDirective
+  ],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
   providers: [
@@ -28,6 +33,7 @@ export class InputComponent implements ControlValueAccessor {
   @Input() errorMessage: string = '';
   @Input() submitted: boolean = false;
   @Input() autofocus: boolean = false;
+  @Input() mask?: string = '';
 
   @ViewChild('inputRef') inputRef!: ElementRef<HTMLInputElement>;
 
