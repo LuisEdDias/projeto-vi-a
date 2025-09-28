@@ -7,6 +7,7 @@ import { DoacaoService } from '../infra/services/doacao.service';
 import { DoadorService } from '../../doador/infra/services/doador.service';
 import { ProdutoService } from '../../produto/infra/services/produto.service';
 import { DoacaoCreateDTO, ProdutoQuantidadeDTO } from '../infra/interfaces/doacao.interface';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-doacao-create',
@@ -15,6 +16,7 @@ import { DoacaoCreateDTO, ProdutoQuantidadeDTO } from '../infra/interfaces/doaca
     SelectComponent,
     TextareaComponent,
     ReactiveFormsModule,
+    DecimalPipe
   ],
   templateUrl: './doacao-create.component.html',
   styleUrl: './doacao-create.component.scss',
@@ -96,7 +98,7 @@ export class DoacaoCreateComponent {
     }
 
     const produtoId = this.addItemForm.get('produtoId')?.value;
-    const quantidade = Number(this.addItemForm.get('quantidade')?.value);
+    const quantidade = Number((this.addItemForm.get('quantidade')?.value || '0').replace(',', '.'));
 
     const produto = this.produtoOptList.find((p) => p.value === produtoId);
     if (!produto) {

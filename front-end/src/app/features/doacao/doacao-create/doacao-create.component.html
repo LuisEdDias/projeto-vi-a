@@ -27,7 +27,7 @@
                             [placeholder]="'Selecione o produto...'" [options]="produtoOptList"
                             [errorMessage]="getErrorMessage('produtoId', addItemForm)"
                             [submitted]="addItemSubmitted"></app-select>
-                        <app-input formControlName="quantidade" [label]="'Quantidade'" [type]="'number'"
+                        <app-input formControlName="quantidade" [label]="'Quantidade'" [mask]="'0*,00'"
                             [placeholder]="'Digite a quantidade...'" [submitted]="addItemSubmitted"
                             [errorMessage]="getErrorMessage('quantidade', addItemForm)"></app-input>
                         <div class="col-12 d-flex justify-content-end">
@@ -47,22 +47,32 @@
                         Nenhum item adicionado a doação.
                     </div>
                     } @else {
-                    <div class="mb-2 p-2">
-                        <ul class="list-group">
-                            @for (item of produtoQuantidade(); track item.produtoId) {
-                            <li class="list-group-item d-flex justify-content-between align-items-center p-0">
-                                <button class="btn btn-sm btn-danger px-1 py-0 m-1"
-                                    (click)="removeItem(item.produtoId)">
-                                    X
-                                </button>
-                                <div class="col-2"><strong>Produto:</strong> {{ getProdutoNome(item.produtoId) }}
-                                </div>
-                                <div class="col"><strong>Quantidade:</strong> {{ item.quantidade }}</div>
-                            </li>
-                            }
-                        </ul>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-hover table-striped table-bordered mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="col-8">Produto</th>
+                                    <th scope="col" class="col-2">Quantidade</th>
+                                    <th scope="col" class="col-2"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (item of produtoQuantidade(); track item.produtoId) {
+                                <tr>
+                                    <td>{{ getProdutoNome(item.produtoId) }}</td>
+                                    <td class="text-end">{{ item.quantidade | number: '1.2-2' }}</td>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-danger px-1 py-0 m-1"
+                                            (click)="removeItem(item.produtoId)">
+                                            X
+                                        </button>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="d-flex justify-content-between gap-2">
+                    <div class="d-flex justify-content-between gap-2 mt-2">
                         <button type="button" class="btn app-btn-gray col" (click)="clearAllItems()">
                             Remover Todos
                         </button>
