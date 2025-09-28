@@ -3,6 +3,7 @@ import { ProdutoListComponent } from './features/produto/produto-list/produto-li
 import { ProdutoCreateComponent } from './features/produto/produto-create/produto-create.component';
 import { DoadorCreateComponent } from './features/doador/doador-create/doador-create.component';
 import { DoadorListComponent } from './features/doador/doador-list/doador-list.component';
+import { DoacaoCreateComponent } from './features/doacao/doacao-create/doacao-create.component';
 
 export const routes: Routes = [
   {
@@ -14,8 +15,8 @@ export const routes: Routes = [
       },
       {
         path: 'cadastro',
-        component: ProdutoCreateComponent
-      }
+        component: ProdutoCreateComponent,
+      },
     ],
   },
   {
@@ -23,11 +24,20 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        component: DoadorListComponent
+        component: DoadorListComponent,
       },
       {
         path: 'cadastro',
-        component: DoadorCreateComponent
+        component: DoadorCreateComponent,
+      },
+    ],
+  },
+  {
+    path: 'doacao',
+    children: [
+      {
+        path: 'cadastro',
+        component: DoacaoCreateComponent,
       },
     ],
   },

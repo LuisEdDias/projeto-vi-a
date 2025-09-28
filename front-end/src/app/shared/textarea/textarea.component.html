@@ -1,1 +1,14 @@
-<p>textarea works!</p>
+<div class="d-flex flex-column h-100">
+    <label *ngIf="label" class="form-label fw-medium text-muted">{{ label }}</label>
+    <div class="input-group bg-white flex-grow-1">
+        <span *ngIf="icon" class="input-group-text bg-light border-end-0">
+            <i [class]="icon"></i>
+        </span>
+        <textarea class="form-control input-custom d-flex" [rows]="rows" [placeholder]="placeholder"
+            [ngClass]="{ 'border-start-0': icon, 'is-invalid': submitted && errorMessage }" [value]="value"
+            (input)="onInput($event)"></textarea>
+    </div>
+    <div *ngIf="submitted && errorMessage" class="invalid-feedback d-block">
+        {{ errorMessage }}
+    </div>
+</div>
