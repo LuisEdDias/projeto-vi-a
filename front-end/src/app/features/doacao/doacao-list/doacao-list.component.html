@@ -24,7 +24,8 @@
                             </td>
                             <td>{{ doacao.data }}</td>
                             <td>
-                                <a class="btn btn-sm btn-outline-primary me-1" [routerLink]="[`/${doacao.doacaoId}`]">
+                                <a class="btn btn-sm btn-outline-primary me-1"
+                                    [routerLink]="['/doacao', doacao.doacaoId]">
                                     Ver Detalhes
                                 </a>
                                 <a class="btn btn-sm btn-outline-danger" (click)="removeDoacao(doacao.doacaoId)">

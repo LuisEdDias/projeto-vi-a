@@ -5,6 +5,7 @@ import { DoadorCreateComponent } from './features/doador/doador-create/doador-cr
 import { DoadorListComponent } from './features/doador/doador-list/doador-list.component';
 import { DoacaoCreateComponent } from './features/doacao/doacao-create/doacao-create.component';
 import { DoacaoListComponent } from './features/doacao/doacao-list/doacao-list.component';
+import { DoacaoDetailsComponent } from './features/doacao/doacao-details/doacao-details.component';
 
 export const routes: Routes = [
   {
@@ -38,11 +39,15 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        component: DoacaoListComponent
+        component: DoacaoListComponent,
       },
       {
         path: 'cadastro',
         component: DoacaoCreateComponent,
+      },
+      {
+        path: ':id',
+        component: DoacaoDetailsComponent,
       },
     ],
   },

@@ -1,53 +1,60 @@
 .card {
-    border-radius: 1rem;
+  border-radius: 1rem;
 }
 
 .card-header {
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    background-color: #004080
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  background-color: #004080;
 }
 
 .app-btn-blue {
-    border: none;
-    background: linear-gradient(to top, #004080, #0073e6);
-    color: white;
+  border: none;
+  background: linear-gradient(to top, #004080, #0073e6);
+  color: white;
 }
 
 .app-btn-blue:hover {
-    border: none;
-    background: linear-gradient(to top, #0073e6, #004080);
+  border: none;
+  background: linear-gradient(to top, #0073e6, #004080);
 }
 
 .app-btn-gray {
-    border: none;
-    background: linear-gradient(to top, #333, #838383);
-    color: white;
+  border: none;
+  background: linear-gradient(to top, #333, #838383);
+  color: white;
 }
 
 .app-btn-gray:hover {
-    border: none;
-    background: linear-gradient(to top, #838383, #333);
+  border: none;
+  background: linear-gradient(to top, #838383, #333);
 }
 
 .app-btn-green {
-    border: none;
-    background: linear-gradient(to top, #177217, #0bd40b);
-    color: white;
+  border: none;
+  background: linear-gradient(to top, #177217, #0bd40b);
+  color: white;
 }
 
 .app-btn-green:hover {
-    border: none;
-    background: linear-gradient(to top, #0bd40b, #177217);
+  border: none;
+  background: linear-gradient(to top, #0bd40b, #177217);
 }
 
 .app-btn-red {
-    border: none;
-    background: linear-gradient(to top, #ff0000, #ff4d4d);
-    color: white;
+  border: none;
+  background: linear-gradient(to top, #ff0000, #ff4d4d);
+  color: white;
 }
 
 .app-btn-red:hover {
-    border: none;
-    background: linear-gradient(to top, #ff4d4d, #ff0000);
+  border: none;
+  background: linear-gradient(to top, #ff4d4d, #ff0000);
+}
+
+.hr {
+  border: none;
+  border-top: 2px solid #004080;
+  margin: 1rem 0;
+  width: 100%;
 }
