@@ -78,7 +78,7 @@ export class DoacaoDetailsComponent {
       error: (error) => {
         console.error('Erro ao carregar a doação:', error);
         alert('Erro ao carregar a doação. Redirecionando para a lista.');
-        this.router.navigate(['/doacoes']);
+        this.router.navigate(['/doacao']);
       },
     });
   }

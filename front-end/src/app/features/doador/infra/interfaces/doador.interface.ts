@@ -15,3 +15,13 @@ export interface DoadorUpdateDTO {
   nome: string;
   email: string;
 }
+
+export interface DoadorWithDoacoesResponseDTO extends DoadorResponseDTO {
+  doacoes: DoacaoDTO[];
+}
+
+interface DoacaoDTO {
+  id: number;
+  descricao: string;
+  data: string
+}

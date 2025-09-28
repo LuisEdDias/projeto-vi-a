@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BaseService } from '../../../../core/base.service';
 import { Observable } from 'rxjs';
-import { DoadorCreateDTO, DoadorResponseDTO, DoadorUpdateDTO } from '../interfaces/doador.interface';
+import { DoadorCreateDTO, DoadorResponseDTO, DoadorUpdateDTO, DoadorWithDoacoesResponseDTO } from '../interfaces/doador.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +13,10 @@ export class DoadorService {
 
   getAll(): Observable<DoadorResponseDTO[]> {
     return this.baseService.get<DoadorResponseDTO[]>(this.endpoint);
+  }
+
+  getById(id: number): Observable<DoadorWithDoacoesResponseDTO> {
+    return this.baseService.get<DoadorWithDoacoesResponseDTO>(`${this.endpoint}/${id}`);
   }
 
   create(data: DoadorCreateDTO): Observable<DoadorResponseDTO> {

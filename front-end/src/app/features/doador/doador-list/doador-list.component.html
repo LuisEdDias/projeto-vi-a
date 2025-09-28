@@ -17,7 +17,11 @@
                         <tr *ngFor="let doador of doadores()">
                             <td>{{ doador.id }}</td>
                             <td>{{ doador.nome }}</td>
-                            <td>{{ doador.docIdentificacao }}</td>
+                            <td>{{ 
+                            doador.docIdentificacao | mask: doador.docIdentificacao.length == 11 
+                            ? '000.000.000-00' 
+                            : '00.000.000/0000-00'
+                            }}</td>
                             <td>{{ doador.email }}</td>
                             <td>
                                 <a class="btn btn-sm btn-outline-primary me-1"
@@ -27,7 +31,7 @@
                                 <a class="btn btn-sm btn-outline-danger me-1" (click)="removeDoador(doador.id)">
                                     Excluir
                                 </a>
-                                <a class="btn btn-sm btn-outline-success" [routerLink]="[`/${doador.id}/doacoes`]">
+                                <a class="btn btn-sm btn-outline-success" [routerLink]="['/doador', doador.id]">
                                     Doações
                                 </a>
                             </td>

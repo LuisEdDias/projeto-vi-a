@@ -11,6 +11,7 @@ import { DoadorService } from '../infra/services/doador.service';
 import { InputComponent } from '../../../shared/input/input.component';
 import { NgFor, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { NgxMaskPipe } from 'ngx-mask';
 
 @Component({
   selector: 'app-doador-list',
@@ -20,7 +21,8 @@ import { RouterLink } from '@angular/router';
     InputComponent,
     NgIf,
     NgFor,
-    RouterLink
+    RouterLink,
+    NgxMaskPipe
 ],
   templateUrl: './doador-list.component.html',
   styleUrl: './doador-list.component.scss',
