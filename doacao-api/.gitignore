@@ -2,8 +2,6 @@
 HELP.md
 
 ### Maven ###
-target/
-!target/doacao-api.jar
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
