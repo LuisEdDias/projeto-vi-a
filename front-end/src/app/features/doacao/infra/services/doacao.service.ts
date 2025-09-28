@@ -24,4 +24,8 @@ export class DoacaoService {
     create(data: DoacaoCreateDTO): Observable<DoacaoWithItensResponseDTO> {
         return this.baseService.post<DoacaoWithItensResponseDTO>(this.endpoint, data);
     }
+
+    delete(id: number): Observable<void> {
+        return this.baseService.delete<void>(`${this.endpoint}/${id}`);
+    }
 }
